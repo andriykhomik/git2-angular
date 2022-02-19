@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../../shared/services/users.service';
 import { Observable } from 'rxjs';
 import { User } from '../../../shared/interfaces/interfaces';
-import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-blocks',
@@ -12,17 +11,17 @@ import { FormControl, Validators } from '@angular/forms';
 export class BlocksComponent implements OnInit {
   public users$!: Observable<User[]>;
 
-  public searchControl: FormControl = new FormControl('blocks', [
-    Validators.required,
-  ]);
-
   constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
-    this.searchControl.valueChanges.subscribe((value) => {
-      if (value) {
-        this.users$ = this.usersService.getUsers(value);
-      }
-    });
+    console.log('blocks');
+    console.log(this.users$);
+  }
+
+  searchName(usersName: string) {
+    if (usersName) {
+      this.users$ = this.usersService.getUsers(usersName);
+      console.log(this.users$);
+    }
   }
 }

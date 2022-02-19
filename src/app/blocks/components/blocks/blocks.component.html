@@ -1,7 +1,7 @@
-<p>blocks works!</p>
 
-<div *ngFor="let user of users$ | async" > {{user.login}}</div>
+<app-search-users (searchName)="searchName($event)"></app-search-users>
 
-<app-search-users [control]="searchControl"></app-search-users>
-<!--<input type="text" [formControl]="searchControl">-->
+<app-blocks-list [users]="users$ | async"></app-blocks-list>
+
+
 

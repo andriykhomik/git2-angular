@@ -19,4 +19,8 @@ export class UsersService {
       )
       .pipe(map((response: Users) => response.items));
   }
+
+  public getUser(login: string): Observable<User> {
+    return this.httpClient.get<User>(`${this.baseUrl}/users/${login}`);
+  }
 }

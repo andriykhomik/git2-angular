@@ -6,4 +6,7 @@ export interface Users {
 
 export interface User {
   login: string;
+  avatar_url: string;
+  type: string;
+  html_url: string;
 }

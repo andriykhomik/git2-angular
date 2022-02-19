@@ -1,3 +1,8 @@
-<p>search-users works!</p>
+<!--<p>search-users works!</p>-->
 
-<input type="text" [formControl]="control" >
+<div class="form search-form">
+  <input type="text" [formControl]="searchInput" >
+  <button (click)="getUsers()">Search</button>
+</div>
+
+

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from '../../../interfaces/interfaces';
 
 @Component({
   selector: 'app-details-user-info',
   templateUrl: './details-user-info.component.html',
-  styleUrls: ['./details-user-info.component.scss']
+  styleUrls: ['./details-user-info.component.scss'],
 })
 export class DetailsUserInfoComponent implements OnInit {
+  @Input() user!: User | null;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

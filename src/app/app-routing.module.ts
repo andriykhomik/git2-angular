@@ -14,7 +14,7 @@ const routes: Routes = [
       import('./table/table.module').then((m) => m.TableModule),
   },
   {
-    path: ':page/details/:id',
+    path: ':page/details/:login',
     loadChildren: () =>
       import('./shared/details/details.module').then((m) => m.DetailsModule),
   },

@@ -1,2 +1,4 @@
+<ng-container *ngIf="user$ | async as user">
+  <app-details-user-info [user]="user"></app-details-user-info>
+</ng-container>
 
-<app-details-user-info [user]="user$ | async"></app-details-user-info>

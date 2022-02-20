@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User, Users } from '../interfaces/interfaces';
 
@@ -7,6 +7,9 @@ import { User, Users } from '../interfaces/interfaces';
   providedIn: 'root',
 })
 export class UsersService {
+  public savedInputValue$: BehaviorSubject<string> =
+    new BehaviorSubject<string>('');
+
   constructor(
     @Inject('BASE_URL') private baseUrl: string,
     private httpClient: HttpClient

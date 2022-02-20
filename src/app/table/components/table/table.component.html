@@ -1,3 +1,8 @@
-<p>table works!</p>
 
-<app-search-users></app-search-users>
+<app-search-users (searchName)="searchName($event)" [previousValue]="previousValue"></app-search-users>
+
+<ng-container *ngIf="users$ | async as users">
+  <app-table-list [users]="users"></app-table-list>
+</ng-container>
+
+

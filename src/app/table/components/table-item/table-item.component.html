@@ -1,1 +1,24 @@
-<p>table-item works!</p>
+
+<div class="blocks-container">
+  <table>
+    <thead>
+    <tr class="user table-head table-user">
+      <th>#</th>
+      <th>Login</th>
+      <th>Type</th>
+      <th>Photo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="user table-user" *ngFor="let user of users; let idx = index" [routerLink]="['/table', 'details', user.login]">
+      <td>{{idx + 1}}</td>
+      <td>{{user.login}}</td>
+      <td>{{user.type}}</td>
+      <td>
+        <img class="img" [src]="[user.avatar_url]" [alt]="user.login">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

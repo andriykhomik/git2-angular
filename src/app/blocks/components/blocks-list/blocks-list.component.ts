@@ -7,12 +7,9 @@ import { User } from '../../../shared/interfaces/interfaces';
   styleUrls: ['./blocks-list.component.scss'],
 })
 export class BlocksListComponent implements OnInit {
-  @Input() public users!: User[] | null;
+  @Input() public users!: User[];
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log('blocks list');
-    console.log(this.users);
-  }
+  ngOnInit(): void {}
 }

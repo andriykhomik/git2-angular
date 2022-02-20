@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -7,16 +7,21 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./search-users.component.scss'],
 })
 export class SearchUsersComponent implements OnInit {
-  @Output() searchName: EventEmitter<string> = new EventEmitter<string>();
+  @Input() public previousValue: string = '';
+  @Output() private searchName: EventEmitter<string> =
+    new EventEmitter<string>();
 
   public searchInput: FormControl = new FormControl();
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.searchInput.setValue(this.previousValue);
+  }
 
-  getUsers() {
+  public inputValue() {
+    console.log(this.searchInput.value);
+    // console.log('search value');
     this.searchName.emit(this.searchInput.value);
-    this.searchInput.reset();
   }
 }

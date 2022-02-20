@@ -1,7 +1,9 @@
 
-<app-search-users (searchName)="searchName($event)"></app-search-users>
+<app-search-users (searchName)="searchName($event)" [previousValue]="previousValue"></app-search-users>
 
-<app-blocks-list [users]="users$ | async"></app-blocks-list>
+<ng-container *ngIf="users$ |  async as users">
+  <app-blocks-list [users]="users"></app-blocks-list>
+</ng-container>
 
 
 

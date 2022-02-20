@@ -20,8 +20,6 @@ export class SearchUsersComponent implements OnInit {
   }
 
   public inputValue() {
-    console.log(this.searchInput.value);
-    // console.log('search value');
     this.searchName.emit(this.searchInput.value);
   }
 }

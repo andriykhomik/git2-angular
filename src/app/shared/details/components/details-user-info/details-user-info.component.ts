@@ -7,7 +7,7 @@ import { User } from '../../../interfaces/interfaces';
   styleUrls: ['./details-user-info.component.scss'],
 })
 export class DetailsUserInfoComponent implements OnInit {
-  @Input() user!: User;
+  @Input() public user!: User;
 
   constructor() {}
 

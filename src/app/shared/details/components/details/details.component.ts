@@ -19,10 +19,7 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
-      console.log(params['login']);
       this.user$ = this.userService.getUser(params['login']);
-      console.log(this.user$);
     });
-    // this.userService.
   }
 }

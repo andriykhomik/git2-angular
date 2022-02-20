@@ -30,7 +30,6 @@ export class TableComponent implements OnInit {
     if (userName) {
       this.users$ = this.usersService.getUsers(userName);
       this.usersService.savedInputValue$.next(userName);
-      console.log(this.users$);
     }
   }
 }
